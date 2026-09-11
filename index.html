@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nithya's Website</title>
+    <title>Nithya's Login</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -19,88 +20,229 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
             min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+
             display: flex;
             justify-content: center;
             align-items: center;
 
-            background: linear-gradient(
-                135deg,
-                #667eea,
-                #764ba2
-            );
+            background:
+                radial-gradient(circle at top left, #8b5cf6, transparent 35%),
+                radial-gradient(circle at bottom right, #06b6d4, transparent 35%),
+                linear-gradient(135deg, #111827, #1e1b4b);
 
             color: white;
+            padding: 20px;
         }
 
-        .container {
-            text-align: center;
-            padding: 50px 70px;
+        /* Login Card */
+
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+
+            padding: 45px 40px;
+
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 25px;
 
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
 
-            border: 1px solid rgba(255, 255, 255, 0.25);
-
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.25);
-
-            animation: fadeIn 1.2s ease;
+            animation: slideUp 0.8s ease;
         }
 
-        .small-text {
-            font-size: 16px;
-            font-weight: 400;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            opacity: 0.85;
+        /* Logo */
+
+        .logo {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+
+            font-size: 28px;
+            font-weight: 700;
+
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
         }
 
         h1 {
-            font-size: 52px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
+            text-align: center;
 
-            text-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .description {
-            font-size: 18px;
-            font-weight: 300;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 30px;
-
-            color: #667eea;
-            background: white;
-
-            text-decoration: none;
+            font-size: 32px;
             font-weight: 600;
 
-            border-radius: 30px;
-
-            transition: all 0.3s ease;
+            margin-bottom: 8px;
         }
 
-        .button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-            background: #f5f5f5;
+        .subtitle {
+            text-align: center;
+
+            font-size: 14px;
+            font-weight: 300;
+
+            color: rgba(255, 255, 255, 0.7);
+
+            margin-bottom: 30px;
         }
 
-        @keyframes fadeIn {
+        /* Input */
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+
+            outline: none;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            color: white;
+
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .input-group input:focus {
+            border-color: #8b5cf6;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
+        }
+
+        /* Remember + Forgot */
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 5px 0 25px;
+
+            font-size: 13px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .remember input {
+            accent-color: #8b5cf6;
+        }
+
+        .forgot {
+            color: #c4b5fd;
+            text-decoration: none;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+        /* Login Button */
+
+        .login-btn {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+
+            color: white;
+
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.45);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+
+        .signup {
+            text-align: center;
+
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .signup a {
+            color: #c4b5fd;
+
+            text-decoration: none;
+
+            font-weight: 600;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animation */
+
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
 
             to {
@@ -109,25 +251,22 @@
             }
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
+        /* Mobile */
 
-            .container {
-                width: 90%;
-                padding: 40px 20px;
+        @media (max-width: 500px) {
+
+            .login-container {
+                padding: 35px 25px;
             }
 
             h1 {
-                font-size: 34px;
+                font-size: 27px;
             }
 
-            .description {
-                font-size: 15px;
-            }
-
-            .small-text {
-                font-size: 12px;
-                letter-spacing: 3px;
+            .logo {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
             }
         }
     </style>
@@ -135,20 +274,69 @@
 
 <body>
 
-    <div class="container">
+    <div class="login-container">
 
-        <p class="small-text">Welcome to</p>
+        <div class="logo">
+            N
+        </div>
 
-        <h1>THIS IS NITHYA'S WEBSITE</h1>
+        <h1>Welcome Back</h1>
 
-        <p class="description">
-            A simple, modern and creative web experience.
+        <p class="subtitle">
+            Login to Nithya's Website
         </p>
 
-        <a href="#" class="button">Explore</a>
+        <form>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <div class="options">
+
+                <label class="remember">
+                    <input type="checkbox">
+                    Remember me
+                </label>
+
+                <a href="#" class="forgot">
+                    Forgot password?
+                </a>
+
+            </div>
+
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+
+        <p class="signup">
+            Don't have an account?
+            <a href="#">Create account</a>
+        </p>
 
     </div>
 
 </body>
 </html>
-
